@@ -10,25 +10,10 @@ const CharacterWrapper = styled.div`
     color: orange;
 `;
 
-const Character = (props) => {
-    const data = props.data;
-    const characterNames = data.map((el) => {
-        return (el.name);
-    })
-    const characterName = characterNames.map(element => {
-        return element;
-    });
+const Character = ({ data }) => {
+    const characterNames = data.map((el) => <h2>{el.name}</h2>)
 
-    return (
-        <CharacterWrapper>
-            <h2>{characterName[0]}</h2> 
-            <h2>{characterName[1]}</h2> 
-            <h2>{characterName[2]}</h2> 
-            <h2>{characterName[3]}</h2> 
-            <h2>{characterName[4]}</h2> 
-            <h2>{characterName[5]}</h2>      
-        </CharacterWrapper>
-    );
+    return <CharacterWrapper>{characterNames}</CharacterWrapper>;
 }
 
 export default Character;
